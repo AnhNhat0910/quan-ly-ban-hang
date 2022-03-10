@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main class="container">
+	<div th:replace="~{/cart/view :: shopping_cart}"></div>
+	<div class="card border border-primary mt-3">
+		<div class="card-header bg-primary">ORDER PURCHASING</div>
+		<div class="card-body">
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label>Purchaser:</label>
+					<div class="form-control" id="username">[[${#request.remoteUser}]]</div>
+				</div>
+				<div class="form-group col-md-6">
+					<label>Order Date:</label>
+					<div class="form-control">{{order.createDate | date:'dd-MM-yyyy'}}</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputAddress">Shipping Address:</label>
+				<textarea ng-model="order.address" class="form-control"></textarea>
+			</div>
+		</div>
+		<div class="card-footer text-right">
+			<button ng-click="order.purchase()" class="btn btn-outline-success">Purchase</button>
+		</div>
+	</div>
+	</main>
+</body>
+</html>

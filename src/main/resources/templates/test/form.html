@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+    <form th:object="${form}" method="post">
+        <div class="form-group">
+          <label>Mã SV</label>
+          <input th:field="*{maSV}" type="text" class="form-control" >
+        </div>
+        <div class="form-group">
+            <label>Họ và Tên</label>
+            <input th:field="*{name}" type="text" class="form-control" >
+        </div>
+        <div class="form-group">
+            <label>Điểm</label>
+            <input th:field="*{mark}" type="text" class="form-control" >
+        </div>
+        <div class="form-group">
+            <label>Chuyên ngành</label>
+            <select th:field="*{major}" class="form-control">
+              <option value="APP">Ứng dụng phần mềm</option>
+              <option value="WEB">Thiết kế WEB</option>
+            </select>
+        </div>
+        <div>
+            <button th:formaction="@{/student/create}" class="btn btn-outline-success">Thêm</button>
+            <button th:formaction="@{|/student/update/${key}|}" class="btn btn-outline-primary">Update</button>
+        </div>
+      
+      </form>
+</body>
+</html>

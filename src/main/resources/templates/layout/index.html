@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+<head>
+ <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Java 6 Project</title>
+ <!-- Google Font -->
+    <link href="http://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+	 <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- AngularJS -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet"
+		href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+	<link href="/assets/css/shopping-cart-app.css" rel="stylesheet" />
+	<link href="/assets/css/selegant-icons.css" rel="stylesheet" />
+	<link href="/assets/css/jquery-ui.min.css" rel="stylesheet" />
+	<link href="/assets/css/snice-select.css" rel="stylesheet" />
+	<link href="/assets/css/owl.carousel.min.css" rel="stylesheet" />
+	<link href="/assets/css/slicknav.min.css" rel="stylesheet" />
+	<link href="/assets/css/style.css" rel="stylesheet" />
+	<link href="/assets/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body
+	 ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
+	<!-- <header class="row">
+		<div class="alert alert-success w-100 text-center">
+  			<h1><marquee>FPT Polytechnic</marquee></h1>
+		</div>
+	</header> -->
+	<nav>
+		<div th:replace="/layout/_menu.html"></div>
+	</nav>
+	<div class="row">
+		<div class="col-sm-12">
+			<!-- <div th:replace="/layout/_cart-info.html"></div> -->
+			<div th:replace="/layout/_category.html"></div>
+		</div>
+		<article class="col-sm-12">
+			<div th:replace="${main}"></div>
+		</article>
+		
+	</div >
+	<!-- Footer Section Begin -->
+	<div th:replace="/layout/_footer.html"></div>
+    <!-- Footer Section End -->
+	<script src="/assets/js/bootstrap.min.js"></script>
+	 <script src="/assets/js/jquery-3.3.1.min.js"></script>
+	<script src="/assets/js/jquery-ui.min.js"></script>
+	<script src="/assets/js/jquery.nice-select.min.js"></script>
+	<script src="/assets/js/jquery.slicknav.js"></script>
+	<script src="/assets/js/main.js"></script>
+	<script src="/assets/js/mixitup.min.js"></script>
+	<script src="/assets/js/owl.carousel.min.js"></script>
+	<script src="/assets/js/shopping-cart-app.js"></script>
+</body>
+</html>

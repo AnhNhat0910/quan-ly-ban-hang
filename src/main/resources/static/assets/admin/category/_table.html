@@ -1,0 +1,26 @@
+<div class="card mt-2 w-100">
+    <div class="card-header">CATEGORY LIST</div>
+    <table class="table">
+        <thead class="thead-dark" style="font-variant: small-caps;">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+           
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in items">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>
+	                <div class="btn-group btn-group-xs">
+	                    <button ng-click="edit(item)" class="btn btn-warning far fa-edit"></button>
+	                    <button ng-click="delete(item.id)" class="btn btn-danger far fa-trash-alt"></button>
+	                </div>
+	            </td>
+            </tr>
+        </tbody>
+      </table>
+      
+</div>

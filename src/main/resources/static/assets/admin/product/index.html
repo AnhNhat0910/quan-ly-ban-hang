@@ -1,0 +1,18 @@
+
+<ul class="nav nav-tabs"  style="font-variant: small-caps;">
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" data-target="#edit" href="">Product Edition</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" data-target="#list" href="">List of Products</a>
+  </li>
+</ul> 
+
+ <div class="tab-content">
+  <div class="tab-pane container" id="edit">
+     <div ng-include="'/assets/admin/product/_form.html'"></div>
+  </div>
+  <div class="tab-pane container active" id="list">
+     <div ng-include="'/assets/admin/product/_table.html'"></div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- Page Preloder -->
+<div id="preloder">
+  <div class="loader"></div>
+</div>
+
+<!-- Header Section Begin -->
+<header class="header">
+  <div class="header__top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <div class="header__top__left">
+            <ul>
+              <li><i class="fa fa-envelope"></i> nhattaps14005@fpt.edu.vn</li>
+              <li>Trần Anh Nhật</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="header__top__right">
+            <div class="header__top__right__social">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            </div>
+            <div class="header__top__right__language">
+              <img src="/assets/images/vietnam.png" alt="">
+              <div>Tiếng Việt</div>
+              <span class="arrow_carrot-down"></span>
+              <ul>
+                <li><a href="#">Tiếng Việt</a></li>
+                <li><a href="#">English</a></li>
+              </ul>
+            </div>
+            <th:block th:unless="${#request.remoteUser}">
+	            <div class="header__top__right__auth">
+	              <a th:href="@{/security/login/form}"><i class="fa fa-user"></i> Login</a>
+	            </div>
+	         </th:block>
+	         <div class="header__top__right__auth font-weight-bold text-uppercase" th:if="${#request.remoteUser}">                      
+	              <a href="#" style="font-family: cursive;">Welcome <span class="text-danger ">[[${#request.remoteUser}]]</span></a>
+	  
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="header__logo">
+          <a href="/"><img src="/assets/images/logo.png" alt=""></a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <nav class="header__menu">
+          <ul>
+            <li class="active"><a href="/">Home</a></li>
+           
+            <th:block th:if="${#request.remoteUser}"> 
+              <li class="nav-item">
+                <a class="nav-link" th:href="@{/order/list}">Your Orders</a>
+              </li>
+              <li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}" class="nav-item ">
+                <a class="nav-link text-danger" th:href="@{/admin/home/index}">Administration</a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" th:href="@{/security/logoff}">Sign Out</a>
+              </li>
+            </th:block>
+           
+        </nav>
+      </div>
+      <div class="col-lg-3">
+        <div class="header__cart">
+          <ul>
+            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+            <li><a th:href="@{/cart/view}"><i class="fa fa-shopping-bag"></i> <span>{{cart.count}}</span></a></li>
+          </ul>
+          <div class="header__cart__price">item: <span>${{cart.amount | number: 2}}</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="humberger__open">
+      <i class="fa fa-bars"></i>
+    </div>
+  </div>
+</header>
+<!-- Header Section End -->

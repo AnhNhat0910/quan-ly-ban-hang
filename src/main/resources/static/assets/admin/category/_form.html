@@ -1,0 +1,22 @@
+<div class="card mt-2 w-100">
+    <div class="card-header">PRODUCT EDITION</div>
+    <div class="card-body">
+        <div class="row">     
+                    <div class="form-group col-sm-12">
+                        <label>Id</label>
+                        <input ng-model="form.id" class="form-control">
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label>Name</label>
+                        <input ng-model="form.name" class="form-control">
+                    </div>
+
+        </div>
+    </div>
+    <div class="card-footer text-center">
+        <button ng-click="create()" class="btn btn-outline-success">Create</button>
+        <button ng-click="update()" class="btn btn-outline-primary">Update</button>
+        <button ng-click="delete(form)" class="btn btn-outline-danger">Delete</button>
+        <button ng-click="reset()" class="btn btn-outline-info" >Reset</button>
+    </div>
+</div>

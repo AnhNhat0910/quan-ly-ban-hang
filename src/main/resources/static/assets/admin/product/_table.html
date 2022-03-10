@@ -1,0 +1,41 @@
+<div class="card mt-2 w-100">
+    <div class="card-header">PRODUCT LIST</div>
+    <table class="table">
+        <thead class="thead-dark" style="font-variant: small-caps;">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Image</th>
+            <th>Category</th>
+            <th>Available</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in pager.items">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price |number: 2}}</td>
+            <td>{{item.createDate | date: 'dd-MM-yyyy'}}</td>
+            <td>{{item.image}}</td>
+            <td>{{item.category.name}}</td>
+            <td>{{item.available ? 'Yes': 'No'}}</td>
+            <td>
+                <div class="btn-group btn-group-xs">
+                    <button ng-click="edit(item)" class="btn btn-warning far fa-edit"></button>
+                    <button ng-click="delete(item)" class="btn btn-danger far fa-trash-alt"></button>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="card-footer text-center">
+          <button ng-click="pager.first()" class="btn btn-outline-secondary">First</button>
+          <button ng-click="pager.prev()" class="btn btn-outline-secondary">Previous</button>
+          <button class="btn btn-outline-success" disabled>{{pager.page +1}} of {{pager.count}}</button>
+          <button ng-click="pager.next()" class="btn btn-outline-secondary">Next</button>
+          <button ng-click="pager.last()" class="btn btn-outline-secondary">Last</button>
+      </div>
+</div>

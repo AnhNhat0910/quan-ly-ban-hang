@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+
+</head>
+<body>
+	 <table class="table table-bordered border-primary mt-2">
+            <thead>
+                <tr>
+                  <th>MaSV</th>
+                  <th>Name</th>
+                  <th>Mark</th>
+                  <th>Major</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="entry: ${items}" th:object="${entry.value}">
+                  <td>[[*{maSV}]]</td>
+                  <td>[[*{name}]]</td>
+                  <td>[[*{mark}]]</td>
+                  <td>[[*{major}]]</td>
+                  <td>
+                    <a th:href="@{|/student/edit/${entry.key}|}" class="btn btn-outline-warning">Edit</a>
+                   
+                  </td>
+                  <td>
+                  	 <a th:href="@{|/student/delete/${entry.key}|}" class="btn btn-outline-danger">Delete</a>
+                  </td>
+                </tr>
+              </tbody>
+        </table>
+</body>
+</html>
